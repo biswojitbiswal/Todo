@@ -153,7 +153,7 @@ const signWithGoogle = AsyncHandller(async (req, res) => {
         createdUser._id
       );
 
-      // const {password : hashedPassword, ...rest } = createdUser._doc;
+
 
       return res.status(200).json({
         message: "User Registered Successfully",
