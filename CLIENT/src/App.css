@@ -1,0 +1,646 @@
+body {
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: .5rem 0 0 0;
+  padding: 0;
+}
+
+#root {
+  width: 500px;
+  min-height: 750px;
+  /* height: 97vh; */
+  margin: 0 auto;
+  padding: 0 .5rem;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid rgb(113, 17, 198);
+  border-radius: .5rem;
+  position: relative;
+
+}
+
+#text {
+  display: none;
+}
+
+section {
+  padding: 1rem;
+}
+
+#navbar {
+  width: 100%;
+  height: 50px;
+  background-color: rgb(195, 220, 241);
+  padding: .5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  border-radius: .5rem .5rem 0 0;
+}
+
+.nav-btn {
+  width: 45px;
+  height: 45px;
+  background-color: aliceblue;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.user-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-icon {
+  font-size: 1.75rem;
+  color: rgb(195, 220, 241);
+}
+.user-icon img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.user-menu span {
+  font-size: 1.5rem;
+  color: rgb(113, 17, 198);
+  font-weight: 900;
+}
+
+.nav-link ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link ul li {
+  list-style: none;
+  margin-right: 1.25rem;
+}
+
+.nav-list {
+  color: rgb(113, 17, 198);
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+footer {
+  width: 100%;
+  height: 80px;
+  background-color: rgb(195, 220, 241);
+  border-radius: 0 0 .5rem .5rem;
+  /* padding: .5rem; */
+  position: absolute;
+  bottom: 0;
+  line-height: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* ================= Error page ================ */
+#error-page {
+  text-align: center;
+
+}
+
+.status-code {
+  font-size: 5rem;
+  line-height: 0;
+  color: rgb(113, 17, 198);
+}
+
+.page-not {
+  color: rgb(113, 17, 198);
+  font-size: 1.5rem;
+}
+
+.error-info {
+  font-size: 1.15rem;
+}
+
+.btns {
+
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  padding: .5rem .25rem;
+  width: 125px;
+  border-radius: .5rem;
+  border: none;
+  background-color: rgb(113, 17, 198);
+  color: aliceblue;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background-color: transparent;
+  border: 2px solid rgb(113, 17, 198);
+  color: rgb(113, 17, 198);
+}
+
+
+
+
+/* ============== Todo main page ============== */
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  color: rgb(113, 17, 198);
+  margin: 0.5rem 0.5rem;
+  /* background-color: red; */
+  width: 100%;
+  text-align: center;
+  padding: .5rem;
+  border-bottom: 2px solid rgb(113, 17, 198);
+}
+
+.input-date {
+  display: flex;
+  width: 130px;
+  height: 30px;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgb(113, 17, 198);
+  border-radius: .4rem;
+  padding: .2rem .5rem;
+  margin: .5rem;
+  position: relative;
+
+}
+
+.input-date .calendar-icon {
+  height: 100%;
+  width: 40px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: .3rem 0 0 .3rem;
+  border: none;
+  outline: 0;
+  background-color: rgb(113, 17, 198);
+  color: aliceblue;
+  font-size: 1.4rem;
+}
+
+.input-date p {
+  position: absolute;
+  right: .5rem;
+  color: rgb(113, 17, 198);
+  font-size: 1.2rem;
+  place-self: left;
+  /* margin-right: .5rem; */
+}
+
+.input-todo {
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: .5rem;
+
+}
+
+.input-todo #note {
+  width: 250px;
+  height: 50px;
+  background-color: transparent;
+  outline: 0;
+  border: 1px solid rgb(113, 17, 198);
+  border-radius: .4rem 0 0 .4rem;
+  padding-left: .5rem;
+  color: rgb(113, 17, 198);
+  font-size: 1.5rem;
+}
+
+.input-todo #note::placeholder {
+  color: rgb(113, 17, 198);
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-todo .add-btn {
+  padding: .82rem 1.5rem;
+  background-color: rgb(113, 17, 198);
+  outline: 0;
+  border: none;
+  border-radius: 0 .4rem .4rem 0;
+  color: aliceblue;
+  font-size: 1.5rem;
+}
+
+/* =========== for individual notes ============== */
+.notes-container {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.notes-container::-webkit-scrollbar {
+  display: none;
+}
+
+.note-containers {
+  width: 95%;
+  background-color: rgb(195, 220, 241);
+  margin: .5rem;
+  height: 40px;
+  border-radius: .4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+
+}
+
+.notes-container .note-input {
+  flex: 1;
+  height: 90%;
+  background-color: transparent;
+  border: none;
+  color: rgb(113, 17, 198);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-left: 1rem;
+  outline: 0;
+  /* margin: .1rem;
+  border-radius: .4rem; */
+}
+
+.note-containers input[type="checkbox"] {
+  height: 50%;
+  width: 20px;
+}
+
+.edit-button {
+  width: 40px;
+  height: 80%;
+  margin-right: .25rem;
+  background-color: rgb(240, 248, 255);
+  border: none;
+  outline: 0;
+  border-radius: .4rem;
+  font-size: 1.2rem;
+
+}
+
+.delete-button {
+  width: 40px;
+  height: 80%;
+  margin-left: .25rem;
+  background-color: rgb(240, 248, 255);
+  border: none;
+  outline: 0;
+  border-radius: .4rem;
+  font-size: 1.2rem;
+  color: rgb(113, 17, 198);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.show-edit {
+  border: 1px solid rgb(113, 17, 198);
+  border-radius: .4rem;
+  flex: 1;
+  height: 90%;
+  background-color: transparent;
+  color: rgb(113, 17, 198);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-left: 1rem;
+  outline: 0;
+  margin-right: .25rem;
+}
+
+.note-checked {
+  text-decoration: line-through;
+}
+
+/* ==============register & login & contact============= */
+#todo-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    font-size: 2.5rem;
+    color: rgb(113, 17, 198);
+  }
+}
+
+.registration-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.google-btn{
+  background-color: transparent;
+  width: 90%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(113, 17, 198);
+  border: 2px solid rgb(113, 17, 198);
+  font-size: 1.2rem;
+}
+.google-btn img{
+  width: 30px;
+  height: 30px;
+  margin: 0 .5rem 0 .5rem;
+}
+.google-btn span{
+  font-size: .9rem;
+}
+.register-btn{
+  width: 90%;
+  height: 35%;
+  margin-bottom: .5rem;
+}
+
+.input-fields {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+}
+
+label {
+  font-size: 1.5rem;
+  color: rgb(113, 17, 198);
+  margin-bottom: .5rem;
+}
+
+.input-field {
+  height: 35px;
+  width: 90%;
+  border: 1px solid rgb(113, 17, 198);
+  border-radius: .5rem;
+  padding: 0 0 0 1rem;
+  outline: 0;
+  color: rgb(113, 17, 198);
+  font-size: 1.3rem;
+}
+
+input::placeholder {
+  color: rgb(113, 17, 198);
+}
+
+#avatar {
+  border: none;
+}
+
+textarea {
+  border: none;
+  border-radius: .5rem;
+  padding: .5rem 0 0 1rem;
+  border: 1px solid rgb(113, 17, 198);
+  font-size: 1.3rem;
+  color: rgb(113, 17, 198);
+  outline: 0;
+}
+
+textarea::placeholder {
+  color: rgb(113, 17, 198);
+}
+
+
+/* ===========user details============ */
+.details{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem .5rem;
+}
+
+.user-avatar{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 1px solid rgb(113, 17, 198);
+  padding: .5rem;
+}
+.user-avatar img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgb(195, 220, 241);
+}
+
+.edit-details{
+  width: 70%;
+  /* height: auto; */
+  margin: 1rem;
+  
+}
+.edit-details .edit-username{
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid rgb(113, 17, 198);
+  padding-bottom: .05rem;
+  margin: 1rem 0;
+}
+.edit-username .editUsername{
+  width: 75%;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  outline: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0 1rem;
+  color: rgb(113, 17, 198);
+}
+.edit-username .show-input{
+  border: 2px solid rgb(113, 17, 198);
+  width: 75%;
+  height: 30px;
+  background-color: transparent;
+  outline: 0;
+  border-radius: .4rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0 1rem;
+  color: rgb(113, 17, 198);
+}
+.edit-username button{
+  /* flex: 1; */
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  font-size: 1.5rem;
+  border-radius: .4rem;
+  border: none;
+}
+.change-pass{
+  width: 100%;
+  height: 40px;
+  background-color: rgb(113, 17, 198);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .75rem;
+  margin-bottom: 1rem;
+}
+.pass-link{
+  color: aliceblue;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+.dlt-user{
+  width: 100%;
+  height: 35px;
+  border: 2px solid red;
+  border-radius: .75rem;
+  background-color: transparent;
+  color: red;
+  font-size: 1.4rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.dlt-link{
+  text-decoration: none;
+  color: red;
+  font-size: 1.5rem;
+}
+
+
+
+
+
+
+
+
+/* for responsive web page */
+@media screen and (max-width: 550px) {
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /* background-color: red; */
+    position: relative;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh !important;
+    padding: 0 .5rem;
+    background-color: aliceblue;
+    border: none;
+    border-radius: 0;
+    margin-right: 0;
+    /* background-color: blue; */
+    
+  }
+
+  .todo-container {
+    width: 100%;
+  }
+  #navbar {
+    height: 70px;
+    border-radius: 0;
+}
+.nav-list {
+  font-size: 1.35rem;
+}
+footer {
+  height: 80px;
+  border-radius: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+ 
+}
+  .heading {
+    color: rgb(113, 17, 198);
+    width: 80%;
+    text-align: center;
+    padding: .5rem;
+    border-bottom: 2px solid rgb(113, 17, 198);
+  }
+
+  .notes-container {
+    width: 100%;
+    /* min-height: flex; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .note-containers {
+    width: 90%;
+    margin: .25rem;
+    padding: .5rem .5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .note-containers .note-input {
+    width: 70%;
+    padding: 0 .5rem 0 .5rem;
+    /* margin-left: .25rem; */
+  }
+  .show-edit {
+    width: 70%;
+    margin-left: .15rem;
+
+}
+
+  .note-containers input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .edit-button {
+    width: 40px;
+    height: 90%;
+
+  }
+
+  .delete-button {
+    width: 40px;
+    height: 90%;
+    /* margin-right: .25rem; */
+  }
+
+
+}
