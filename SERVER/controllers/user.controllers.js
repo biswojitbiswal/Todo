@@ -10,7 +10,7 @@ const generateAccessAndRefreshToken = async (userId) => {
 
     return { accessToken };
   } catch (error) {
-    res.status(500).json({
+    return res.status(500).json({
       message:
         "Something went wrong while generating access and refresh token!",
     });
@@ -22,7 +22,7 @@ const registerUser = AsyncHandller(async (req, res) => {
     const { username, email, password } = req.body;
 
     if ([username, email, password].some((field) => field?.trim() === "")) {
-      res.status(400).json({ message: "All fields require" });
+      return res.status(400).json({ message: "All fields require" });
     }
 
     const userExist = await User.findOne({
@@ -30,19 +30,19 @@ const registerUser = AsyncHandller(async (req, res) => {
     });
 
     if (userExist) {
-      res.status(409).json({ message: "Username or Email already exists" });
+      return res.status(409).json({ message: "Username or Email already exists" });
     }
 
     const avatarImageLocalPath = req.files?.avatar[0]?.path;
 
     if (!avatarImageLocalPath) {
-      res.status(400).json({ message: "Avatar file required" });
+      return res.status(400).json({ message: "Avatar file required" });
     }
 
     const avatarImage = await uploadCloudinary(avatarImageLocalPath);
 
     if (!avatarImage) {
-      res.status(400).json({ message: "Avatar file required" });
+      return res.status(400).json({ message: "Avatar file required" });
     }
 
     const user = await User.create({
@@ -55,7 +55,7 @@ const registerUser = AsyncHandller(async (req, res) => {
     const createdUser = await User.findById(user._id).select("-password");
 
     if (!createdUser) {
-      res
+      return res
         .status(500)
         .json({ message: "Something went wrong while registering user" });
     }
@@ -84,13 +84,13 @@ const loginUser = AsyncHandller(async (req, res) => {
     const user = await User.findOne({ email });
 
     if (!user) {
-      res.status(404).json({ message: "User does not exists" });
+      return res.status(404).json({ message: "User does not exists" });
     }
 
     const isPasswordValid = await user.isPasswordCorrect(password);
 
     if (!isPasswordValid) {
-      res.status(401).json({ message: "Invalid user authentication" });
+      return res.status(401).json({ message: "Invalid user authentication" });
     }
 
     const { accessToken } = await generateAccessAndRefreshToken(user._id);
@@ -131,7 +131,7 @@ const signWithGoogle = AsyncHandller(async (req, res) => {
     const avatarImage = await uploadCloudinary(req.body.avatar);
 
     if (!avatarImage) {
-      res.status(400).json({ message: "Avatar file required" });
+      return res.status(400).json({ message: "Avatar file required" });
     }
 
       const newUser = await User.create({
@@ -144,7 +144,7 @@ const signWithGoogle = AsyncHandller(async (req, res) => {
       const createdUser = await User.findById(newUser._id).select("-password");
 
       if (!createdUser) {
-        res
+        return res
           .status(500)
           .json({ message: "Something went wrong while registering user" });
       }
@@ -172,7 +172,7 @@ const getCurrUser = AsyncHandller(async (req, res) => {
   const userData = req.user;
 
   if (!userData) {
-    res.status(404).json({ message: "Something went wrong" });
+    return res.status(404).json({ message: "Something went wrong" });
   }
 
   return res.status(200).json({
@@ -199,7 +199,7 @@ const editUserName = AsyncHandller(async (req, res) => {
     ).select("-password");
 
     if (!updateUser) {
-      res.status(400).json({ message: "Something went wrong" });
+      return res.status(400).json({ message: "Something went wrong" });
     }
 
     return res.status(200).json({ message: "Username updated", updateUser });
@@ -214,19 +214,19 @@ const passwordReset = AsyncHandller(async (req, res) => {
     const { opassword, cpassword } = req.body;
 
     if (opassword === cpassword) {
-      res.status(401).json({ message: "New password must not be same" });
+      return res.status(401).json({ message: "New password must not be same" });
     }
 
     const user = await User.findById(req.user._id);
 
     if (!user) {
-      res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "User not found" });
     }
 
     const matchPassword = await user.isPasswordCorrect(opassword);
 
     if (!matchPassword) {
-      res.status(400).json({ message: "Invalid old password" });
+      return res.status(400).json({ message: "Invalid old password" });
     }
 
     user.password = cpassword;
@@ -251,13 +251,13 @@ const deleteUser = AsyncHandller(async (req, res) => {
     const user = await User.findById({ _id: id });
 
     if (!user) {
-      res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "User not found" });
     }
 
     const isPassMatch = await user.isPasswordCorrect(password);
 
     if (!isPassMatch) {
-      res.status(401).json({ message: "Invalid user authentication" });
+      return res.status(401).json({ message: "Invalid user authentication" });
     }
 
     await User.findByIdAndDelete({ _id: id });

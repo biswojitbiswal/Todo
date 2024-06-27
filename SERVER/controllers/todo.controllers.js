@@ -11,7 +11,7 @@ const createTodo = AsyncHandller( async(req, res) => {
        const addnote = await Todo.create({note, date}) 
 
        if(!addnote){
-        res.status(400).json({message: "something is wrong"})
+        return res.status(400).json({message: "something is wrong"})
        }
 
        let objId = new mongoose.Types.ObjectId(req.userId)
@@ -57,7 +57,7 @@ const getCurrTodo = AsyncHandller( async(req, res) => {
                 todos: result,
             })
         } else {
-            res.status(404).json({message: "No Note found"})
+            return res.status(404).json({message: "No Note found"})
         }
 
     } catch (error) {

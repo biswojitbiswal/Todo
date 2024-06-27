@@ -7,13 +7,13 @@ const contactData = AsyncHandller( async(req, res) => {
         const {email, message} = req.body;
     
         if(!email || !message){
-            res.status(400).json({message: "All fields required"})
+            return res.status(400).json({message: "All fields required"})
         }
     
         const data = await Contact.create({email, message})
     
         if(!data){
-            res.status(500).json({message: "Something went wrong"})
+            return res.status(500).json({message: "Something went wrong"})
         }
 
         const senderId = new mongoose.Types.ObjectId(req.userId)
