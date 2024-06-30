@@ -59,7 +59,7 @@ function Todos() {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/todo/notes/addnote`, {
+      const response = await fetch(`todo-server-liard-omega.vercel.app/api/todo/notes/addnote`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -85,7 +85,7 @@ function Todos() {
 
   const getCurrNote = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/todo/notes/gettodo/${date}/${user._id}`, {
+      const response = await fetch(`todo-server-liard-omega.vercel.app/api/todo/notes/gettodo/${date}/${user._id}`, {
         method: "GET",
         headers: {
           Authorization: authoriztionToken,
@@ -108,7 +108,7 @@ function Todos() {
 
   const handleDeleteNoteById = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/todo/notes/delete/${id}`, {
+      const response = await fetch(`todo-server-liard-omega.vercel.app/api/todo/notes/delete/${id}`, {
         method: "POST",
         headers: {
           Authorization: authoriztionToken
@@ -150,7 +150,7 @@ function Todos() {
       }
     } else {
       try {
-        const response = await fetch(`http://localhost:5000/api/todo/notes/update/${id}`, {
+        const response = await fetch(`todo-server-liard-omega.vercel.app/api/todo/notes/update/${id}`, {
           method: "PATCH",
           headers: {
             "Content-Type" : "application/json",
@@ -178,7 +178,7 @@ function Todos() {
 
   const handleNoteCompleted = async(id) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/todo/notes/complete/${id}`, {
+      const response = await fetch(`todo-server-liard-omega.vercel.app/api/todo/notes/complete/${id}`, {
         method: "POST",
         headers: {
           Authorization: authoriztionToken

@@ -12,7 +12,7 @@ function DeleteLink() {
     const handleDeleteAc = async(e) => {
         e.preventDefault()
         try {
-            const response = await fetch(`http://localhost:5000/api/todo/users/deleteUser/${user._id}`, {
+            const response = await fetch(`todo-server-liard-omega.vercel.app/api/todo/users/deleteUser/${user._id}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",

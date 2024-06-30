@@ -29,7 +29,7 @@ export const AuthContextProvider = ({ children }) => {
 
     const userAuthentication = async() => {
         try {
-            const response = await fetch(`http://localhost:5000/api/todo/users/getuser`, {
+            const response = await fetch(`todo-server-liard-omega.vercel.app/api/todo/users/getuser`, {
                 method: "GET",
                 headers: {
                     Authorization: authoriztionToken, 
