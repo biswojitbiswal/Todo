@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 4000;
 
 
 app.use(cors({
-    origin: ["https://https://todo-nonh1sa73-biswojit.vercel.app"],
+    origin: ["https://todo-nonh1sa73-biswojit.vercel.app"],
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials: true
 }))
