@@ -40,7 +40,7 @@ function Contact() {
     e.preventDefault();
 
     try {
-      const response = await fetch(`todo-server-liard-omega.vercel.app/api/todo/contact/form`, {
+      const response = await fetch(`https://todo-server-liard-omega.vercel.app/api/todo/contact/form`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
