@@ -23,7 +23,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await fetch(`https://todo-nine-bice-68.vercel.app/api/todo/users/login`, {
+      const response = await fetch(`https://todo-server-liard-omega.vercel.app/api/todo/users/login`, {
         method: "POST",
         headers: {
           'Content-Type' : 'application/json'
