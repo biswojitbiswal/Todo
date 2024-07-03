@@ -1,4 +1,4 @@
-import 'dotenv/config'
+// import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
 import connectDb from './DB/db.js';
@@ -9,6 +9,8 @@ import cookieParser from 'cookie-parser';
 import errorMiddleware from './middlewares/error.middlewares.js';
 
 const app = express();
+
+require('dotenv').config();
 
 const PORT = process.env.PORT || 4000;
 
