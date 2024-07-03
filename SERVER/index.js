@@ -34,7 +34,10 @@ app.use("/api/todo/notes", todoRouter)
 
 app.use(errorMiddleware)
 
+app.get("/", (req, res) => {
+    res.send("Express on Vercel");
 
+});
 
 connectDb()
 .then(() => {
