@@ -29,7 +29,7 @@ export const AuthContextProvider = ({ children }) => {
 
     const userAuthentication = async() => {
         try {
-            const response = await fetch(`https://todo-api-livid.vercel.app/api/todo/users/getuser`, {
+            const response = await fetch(`https://todo-api-xi-six.vercel.app/api/todo/users/getuser`, {
                 method: "GET",
                 headers: {
                     Authorization: authoriztionToken, 

@@ -40,7 +40,7 @@ function Contact() {
     e.preventDefault();
 
     try {
-      const response = await fetch(`https://todo-api-livid.vercel.app/api/todo/contact/form`, {
+      const response = await fetch(`https://todo-api-xi-six.vercel.app/api/todo/contact/form`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

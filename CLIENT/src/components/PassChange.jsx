@@ -20,7 +20,7 @@ function PassChange() {
         e.preventDefault();
 
         try {
-          const response = await fetch(`https://todo-api-livid.vercel.app/api/todo/users/passChange`, {
+          const response = await fetch(`https://todo-api-xi-six.vercel.app/api/todo/users/passChange`, {
             method: "PATCH",
             headers: {
               "Content-Type": "application/json",
