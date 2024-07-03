@@ -12,7 +12,7 @@ function DeleteLink() {
     const handleDeleteAc = async(e) => {
         e.preventDefault()
         try {
-            const response = await fetch(`https://todo-api-xi-six.vercel.app/api/todo/users/deleteUser/${user._id}`, {
+            const response = await fetch(`https://todo-api-two-silk.vercel.app/api/todo/users/deleteUser/${user._id}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
