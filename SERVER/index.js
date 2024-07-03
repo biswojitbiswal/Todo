@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 4000;
 
 
 app.use(cors({
-    origin: "https://todo-gamma-ecru.vercel.app",
+    origin: ["https://todo-gamma-ecru.vercel.app"],
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials: true
 }))
