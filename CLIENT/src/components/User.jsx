@@ -24,7 +24,7 @@ function User() {
       setChangeUsername(user.username)
     } else {
       try {
-        const response = await fetch(`https://todo-server-liard-omega.vercel.app/api/todo/users/editUserName/${id}`, {
+        const response = await fetch(`https://todo-api-livid.vercel.app/api/todo/users/editUserName/${id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",

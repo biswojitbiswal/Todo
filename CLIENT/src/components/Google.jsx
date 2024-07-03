@@ -23,7 +23,7 @@ function Google() {
             formData.append('email', email);
             formData.append('avatar', photoURL);
 
-            const res = await fetch(`https://todo-server-liard-omega.vercel.app/api/todo/users/google`, {
+            const res = await fetch(`https://todo-api-livid.vercel.app/api/todo/users/google`, {
                 method: "POST",
                 body: formData,
             })
