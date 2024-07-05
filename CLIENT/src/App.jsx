@@ -31,10 +31,9 @@ function App() {
   //    )
   //  )
   return (
-    <>
       <Router>
         <Routes>
-          {/* <Route path='' element={<Layout />}> */}
+          <Route path='' element={<Layout />}>
             <Route path='/' element={<Todos />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
@@ -45,10 +44,9 @@ function App() {
             <Route path='/user/updateimage/:id' element={<UpdateImage />} />
             <Route path='/logout' element={<Logout />} />
             <Route path='*' element={<Error />} />
-          {/* </Route> */}
+          </Route>
         </Routes>
       </Router>
-    </>
   )
 }
 
