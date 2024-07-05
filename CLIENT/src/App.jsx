@@ -33,18 +33,18 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route element={<Layout />}>
-          <Route index element={<Todos />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/user' element={<User />} />
-          <Route path='/user/passreset' element={<PassChange />} />
-          <Route path='/user/deleteuser/:id' element={<DeleteLink />} />
-          <Route path='/user/updateimage/:id' element={<UpdateImage />} />
-          <Route path='/logout' element={<Logout />} />
-          <Route path='*' element={<Error />} />
+        <Route path="/" element={<Layout />}> {/* Use Layout as parent */}
+          <Route index element={<Todos />} /> {/* Nested route for Todos */}
+          <Route path="login" element={<Login />} /> {/* Nested routes for other components */}
+          <Route path="register" element={<Register />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="/user" element={<User />} />
+          <Route path="/user/passreset" element={<PassChange />} />
+          <Route path="/user/deleteuser/:id" element={<DeleteLink />} />
+          <Route path="/user/updateimage/:id" element={<UpdateImage />} />
+          <Route path="logout" element={<Logout />} />
         </Route>
+        <Route path="*" element={<Error />} />
       </Routes>
     </Router>
   )
