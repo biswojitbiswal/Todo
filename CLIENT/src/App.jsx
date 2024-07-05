@@ -36,8 +36,8 @@ function App() {
         <Routes>
           <Route path='' element={<Layout />}>
             <Route path='/' element={<Todos />} />
-            {/* <Route path='/login' element={<Login />} />
-            <Route path='/register' element={<Register />} />
+            <Route path='/login' element={<Login />} />
+            {/*<Route path='/register' element={<Register />} />
             <Route path='/contact' element={<Contact />} />
             <Route path="/user" element={<User />} />
             <Route path="/user/passreset" element={<PassChange />} />
