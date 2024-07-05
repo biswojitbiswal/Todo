@@ -37,7 +37,7 @@ function App() {
           {/* <Route path='' element={<Layout />}> */}
             <Route path='/' element={<Todos />} />
             <Route path='/login' element={<Login />} />
-            {/*<Route path='/register' element={<Register />} />
+            <Route path='/register' element={<Register />} />
             <Route path='/contact' element={<Contact />} />
             <Route path="/user" element={<User />} />
             <Route path="/user/passreset" element={<PassChange />} />
@@ -45,7 +45,6 @@ function App() {
             <Route path='/user/updateimage/:id' element={<UpdateImage />} />
             <Route path='/logout' element={<Logout />} />
             <Route path='*' element={<Error />} />
-          </Route> */}
           {/* </Route> */}
         </Routes>
       </Router>
