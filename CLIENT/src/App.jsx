@@ -34,7 +34,7 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path='' element={<Layout />}>
+          {/* <Route path='' element={<Layout />}> */}
             <Route path='/' element={<Todos />} />
             <Route path='/login' element={<Login />} />
             {/*<Route path='/register' element={<Register />} />
@@ -46,7 +46,7 @@ function App() {
             <Route path='/logout' element={<Logout />} />
             <Route path='*' element={<Error />} />
           </Route> */}
-          </Route>
+          {/* </Route> */}
         </Routes>
       </Router>
     </>
