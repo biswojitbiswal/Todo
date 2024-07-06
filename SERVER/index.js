@@ -14,11 +14,10 @@ const PORT = process.env.PORT || 4000;
 
 
 app.use(cors({
-    origin: ["https://todo-flame-nine.vercel.app"],
+    origin: ["https://todo-iota-topaz.vercel.app"],
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials: true
 }))
-https://todo-opal-theta.vercel.app/
 
 app.use(express.urlencoded({extended: true, limit: "20kb"}))
 app.use(express.static("public"))
