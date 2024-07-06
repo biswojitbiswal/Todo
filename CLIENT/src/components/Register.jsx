@@ -13,10 +13,11 @@ function Register() {
   })
 
   const navigate = useNavigate();
-  const {storeTokenInCookie, setUser} = useAuth()
+  const { storeTokenInCookie, setUser } = useAuth()
 
   const handleInput = (e) => {
-    setRegisterData({...registerData,
+    setRegisterData({
+      ...registerData,
       [e.target.name]: e.target.value
     });
   }
@@ -46,16 +47,20 @@ function Register() {
       const response = await fetch(`https://todo-api-two-silk.vercel.app/api/todo/users/register`, {
         method: "POST",
         body: formData,
+        headers: {
+          'Accept': 'application/json',
+        },
+        credentials: 'include'
       });
 
       const data = await response.json()
       // console.log("data from server", data);
 
-      if(response.ok){
+      if (response.ok) {
         toast.success("User registered Succesfully")
         storeTokenInCookie(data.token);
         setUser(data.user)
-        setRegisterData({username: "", email: "", avatar: "", password: ""})
+        setRegisterData({ username: "", email: "", avatar: "", password: "" })
         navigate("/")
       } else {
         toast.error(data.extraDetails ? data.extraDetails : data.message)
@@ -64,7 +69,7 @@ function Register() {
       console.error('Error:', error);
       // alert('An error occurred. Please try again later.');
     }
-};
+  };
 
   return (
     <>
