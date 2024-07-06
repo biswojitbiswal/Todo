@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 4000;
 
 
 app.use(cors({
-    origin: ["https://todo-iota-topaz.vercel.app"],
+    origin: process.env.CORS_ORIGIN,
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials: true
 }))
