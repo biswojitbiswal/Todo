@@ -15,7 +15,13 @@ const PORT = process.env.PORT || 4000;
 
 
 app.use(cors({
-    origin: ["https://todo-iota-topaz.vercel.app"],
+    origin: (origin, callback) => {
+        if (origin === 'https://todo-iota-topaz.vercel.app' || process.env.NODE_ENV === 'development') {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     methods: ["GET, POST, PUT, DELETE, PATCH, HEAD"],
     credentials: true
 }))
