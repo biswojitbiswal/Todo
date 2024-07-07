@@ -61,7 +61,7 @@ const uploadCloudinary = async (filePathOrUrl) => {
   const isUrl = filePathOrUrl.startsWith('http');
 
   if (isUrl) {
-    localFilePath = path.join(__dirname, '../../public/temp/avatar.jpg');
+    localFilePath = path.join('public', 'temp', 'avatar.jpg');
     await downloadImage(filePathOrUrl, localFilePath);
   }
 
