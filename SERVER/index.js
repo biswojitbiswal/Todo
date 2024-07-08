@@ -1,6 +1,12 @@
 import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
+app.use(express.json())
+app.use(cors({
+    origin: ["https://todo-iota-topaz.vercel.app"],
+    methods: ["GET, POST, PUT, DELETE, PATCH, HEAD"],
+    credentials: true
+}))
 import connectDb from './DB/db.js';
 import userRouter from './routes/user.routes.js'
 import contactRouter from './routes/contact.routes.js'
@@ -14,22 +20,16 @@ const PORT = process.env.PORT || 4000;
 
 
 
-app.use(cors({
-    origin: (origin, callback) => {
-        if (origin === 'https://todo-iota-topaz.vercel.app' || process.env.NODE_ENV === 'development') {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    methods: ["GET, POST, PUT, DELETE, PATCH, HEAD"],
-    credentials: true
-}))
+// app.use(cors({
+//     origin: ["https://todo-iota-topaz.vercel.app"],
+//     methods: ["GET, POST, PUT, DELETE, PATCH, HEAD"],
+//     credentials: true
+// }))
 
 app.use(express.urlencoded({extended: true, limit: "20kb"}))
 app.use(express.static("public"))
 app.use(cookieParser())
-app.use(express.json())
+// app.use(express.json())
 
 
 
