@@ -43,7 +43,7 @@ function Register() {
       formData.append('password', registerData.password);
       formData.append('avatar', registerData.avatar);
 
-      const response = await fetch(`http://localhost:5000/api/todo/users/register`, {
+      const response = await fetch(`https://todo-api-two-silk.vercel.app/api/todo/users/register`, {
         method: "POST",
         body: formData,
         
